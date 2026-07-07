@@ -1,0 +1,21 @@
+seed: 42
+stage: 1
+model_config: configs/model_geomex_base.yaml
+data:
+  train_jsonl: data/geomex_instructions_stage1.jsonl
+  image_root: /path/to/images
+  tasks: [scene, vqa, caption, counting, aab_grounding]
+training:
+  epochs: 3
+  batch_size: 16
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  mixed_precision: true
+  freeze_vision_encoder: true
+  enable_csgm: false
+  enable_moe: false
+output:
+  checkpoint_dir: checkpoints/stage1
+  log_dir: logs/stage1

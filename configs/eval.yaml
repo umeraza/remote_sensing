@@ -1,0 +1,14 @@
+model_config: configs/model_geomex_base.yaml
+checkpoint: checkpoints/geomex_vlm.pt
+data:
+  eval_jsonl: data/geomex_eval.jsonl
+  image_root: /path/to/images
+metrics:
+  aab: [pr_0_5, pr_0_7, pr_0_9, miou, ciou]
+  rab: [rap50, rap75, rmap]
+  mask: [mask_ap, ap50, ap75, miou]
+  counting: [mae, rmse, count_accuracy]
+  language: [vqa_accuracy, scene_accuracy, cider, bleu4, meteor, rouge_l]
+  consistency: [sas]
+output:
+  results_dir: results/eval

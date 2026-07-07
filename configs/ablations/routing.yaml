@@ -1,0 +1,9 @@
+name: routing
+variants:
+  - full_x_task_geo
+  - token_only
+  - token_task
+  - token_geo
+  - dense_ffn
+  - moe_without_load_balancing
+metrics: [vqa_accuracy, aab_g, rab_g, res, count_mae, avg_load, routing_entropy, activation_frequency]

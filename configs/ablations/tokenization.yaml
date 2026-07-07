@@ -1,0 +1,10 @@
+name: spatial_tokenization
+variants:
+  - full_aab_rab_mask
+  - aab_only
+  - rab_only
+  - mask_only
+  - aab_rab_without_mask
+  - aab_mask_without_rab
+  - without_cross_format_grounding
+metrics: [aab_g, rab_g, res, sas]

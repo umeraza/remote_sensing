@@ -1,0 +1,18 @@
+name: geomex-vlm
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch
+  - torchvision
+  - numpy
+  - pillow
+  - pyyaml
+  - tqdm
+  - scikit-learn
+  - opencv
+  - pytest
+  - pip:
+      - -e .

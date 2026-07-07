@@ -1,0 +1,6 @@
+{
+  "image": "examples/sample_harbor.png",
+  "instruction": "Segment the docked aircraft carrier near the harbor.",
+  "task": "segmentation",
+  "class_name": "aircraft_carrier"
+}

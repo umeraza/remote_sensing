@@ -1,0 +1,23 @@
+seed: 42
+stage: 2
+model_config: configs/model_geomex_base.yaml
+data:
+  train_jsonl: data/geomex_instructions_full.jsonl
+  image_root: /path/to/images
+  tasks: [scene, vqa, caption, counting, aab_grounding, rab_grounding, segmentation, strategic_grounding]
+training:
+  epochs: 5
+  global_batch_size: 144
+  per_device_batch_size: 4
+  gradient_accumulation_steps: 6
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  mixed_precision: true
+  enable_csgm: true
+  enable_moe: true
+  top_k: 2
+  clone_dense_ffn_to_experts: true
+output:
+  checkpoint_dir: checkpoints/stage2
+  log_dir: logs/stage2

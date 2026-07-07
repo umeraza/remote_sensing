@@ -1,0 +1,22 @@
+model:
+  name: GeoMEx-VLM
+  image_size: 512
+  patch_size: 16
+  vision_dim: 768
+  hidden_dim: 768
+  num_layers: 12
+  num_heads: 12
+  num_classes: 64
+  num_scales: 4
+  memory_slots: 8
+  memory_hw: 8
+  num_experts: 8
+  top_k: 2
+  task_embedding_dim: 768
+  aab_resolution: 1000
+  rab_resolution: 1000
+  mask_resolution: 64
+loss:
+  lambda_elb: 0.01
+  lambda_gma: 0.10
+  lambda_cfg: 0.20

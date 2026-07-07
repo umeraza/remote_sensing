@@ -1,0 +1,9 @@
+name: progressive_training
+variants:
+  - full_two_stage
+  - stage1_dense_only
+  - sparse_moe_from_scratch
+  - stage2_without_ffn_cloning
+  - stage2_without_csgm_activation
+  - stage2_frozen_router
+metrics: [vqa_accuracy, aab_g, rab_g, res, count_mae, convergence_speed, val_loss_std, routing_entropy, expert_imbalance, failed_runs]

@@ -1,0 +1,9 @@
+name: csgm
+variants:
+  - full
+  - without_csgm
+  - without_scale_memory
+  - without_class_memory
+  - without_geo_memory_alignment_loss
+  - random_memory_tokens
+metrics: [dior_rsvg_pr50, dota_rmap, fair1m_rmap, refsegrs_miou, sas, count_mae]

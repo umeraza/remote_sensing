@@ -1,0 +1,32 @@
+datasets:
+  dior_rsvg:
+    root: /path/to/DIOR-RSVG
+    split: train
+    supervision: [aab, text, count]
+  dota_v2:
+    root: /path/to/DOTA-v2.0
+    split: train
+    supervision: [rab]
+  fair1m:
+    root: /path/to/FAIR1M
+    split: train
+    supervision: [rab, fine_class]
+  isaid:
+    root: /path/to/iSAID
+    split: train
+    supervision: [mask]
+  geochat_instruct:
+    root: /path/to/GeoChat-Instruct
+    split: train
+    supervision: [caption, vqa, scene]
+  refsegrs:
+    root: /path/to/RefSegRS
+    split: train
+    supervision: [mask, text]
+  xview:
+    root: /path/to/xView
+    split: train
+    supervision: [aab, count]
+output_schema:
+  jsonl_path: data/geomex_instructions.jsonl
+  image_root: /path/to/images

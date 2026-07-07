@@ -1,0 +1,10 @@
+name: instruction_and_augmentation
+variants:
+  - full_instruction_corpus_geo_context_aug
+  - native_annotations_only
+  - without_class_scale_sampling
+  - without_instruction_expansion
+  - without_asset_composition
+  - without_geometric_remapping
+  - without_geo_context_augmentation
+metrics: [xview_map, fair1m_rare_rmap, dota_rmap, sas]
