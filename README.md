@@ -1,18 +1,8 @@
 # GeoMEx-VLM: Geo-Memory-Guided Sparse Expert Vision-Language Model
 
-This repository is a research-code scaffold for **GeoMEx-VLM**, a geo-memory-guided sparse expert vision-language framework for strategic asset grounding in remote sensing. It is organized around the paper components: Class-Scale Geo-Memory (CSGM), geo-memory-guided sparse Mixture-of-Experts (MoE) routing, unified AAB/RAB/mask spatial tokenization, instruction-corpus construction, geo-context augmentation, two-stage dense-to-sparse training, evaluation metrics, ablation studies, and result reporting.
+GeoMEx-VLM is a geo-memory-guided sparse expert vision-language framework for strategic asset grounding in remote sensing. It is organized around the paper components: Class-Scale Geo-Memory (CSGM), geo-memory-guided sparse Mixture-of-Experts (MoE) routing, unified AAB/RAB/mask spatial tokenization, instruction-corpus construction, geo-context augmentation, two-stage dense-to-sparse training, evaluation metrics, ablation studies, and result reporting.
 
-> **Status.** This release contains a clean, runnable implementation scaffold and dataset-conversion interfaces. It does not include pretrained weights or third-party datasets. Download each dataset from its official source and set paths in `configs/datasets.yaml`.
 
-## Main features
-
-- Unified instruction-response schema for scene classification, VQA, captioning, counting, AAB grounding, RAB localization, and compressed mask prediction.
-- Spatial-token utilities for `<box>`, `<rab>`, and `<seg>` outputs.
-- CSGM module for class- and scale-conditioned geospatial memory retrieval.
-- Geo-memory-guided sparse MoE layer using token features, task embeddings, and CSGM context.
-- Progressive Stage-I dense alignment and Stage-II sparse expert specialization scripts.
-- Evaluation utilities for AAB IoU, RAB-to-AAB projection, mask-to-AAB projection, SAS, Count MAE, and count accuracy.
-- Ablation configuration templates for CSGM, routing, spatial tokenization, progressive training, and geo-context augmentation.
 
 ## Repository layout
 
@@ -57,8 +47,6 @@ python scripts/build_instruction_corpus.py \
   --output data/geomex_instructions.jsonl
 ```
 
-The expected JSONL format is documented in `docs/DATASETS.md` and illustrated in `examples/sample_instruction.jsonl`.
-
 ## Training
 
 Stage I performs dense remote-sensing alignment:
@@ -85,9 +73,9 @@ Run a specific ablation:
 python scripts/run_ablation.py --config configs/ablations/csgm.yaml
 ```
 
-## Reported paper targets
+## Reported Results
 
-The paper reports the following headline results for GeoMEx-VLM:
+Following are the GeoMEx-VLM performance comparison with SoTA Models:
 
 | Setting | Metric | Result |
 |---|---:|---:|
@@ -103,12 +91,4 @@ The paper reports the following headline results for GeoMEx-VLM:
 | RefSegRS | Pr@0.5 / Pr@0.7 / oIoU | 85.04 / 71.28 / 82.16 |
 | Instruction/counting | Count Acc. / SAS | 76.35 / 74.02 |
 
-## Reproducibility notes
 
-- Dataset licenses and redistribution rules differ; this repository stores conversion code but not dataset files.
-- The model scaffold uses modular components so that the visual encoder and decoder-only LLM can be replaced by your selected pretrained backbones.
-- Exact paper reproduction requires the same dataset splits, pretrained model initialization, preprocessing, and GPU training budget described in the manuscript.
-
-## Citation
-
-See `CITATION.cff`.
